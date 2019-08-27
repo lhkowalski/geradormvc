@@ -16,7 +16,7 @@ try
 		throw new Exception("É obrigatório informar o arquivo YAML de entrada");
 	
 	$entradaYAML = $argv[1];
-	$diretorioSaida = '.';
+	$diretorioSaida = pathinfo($entradaYAML, PATHINFO_FILENAME);
 
 	if(isset($argv[2]))
 		$diretorioSaida = $argv[2];

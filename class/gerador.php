@@ -27,7 +27,7 @@ class Gerador
 	protected function _carregarArquivo()
 	{
 		if( ! file_exists($this->_arquivoYAML))
-			throw new Exception("Este arquivo YAML não existe");
+			throw new Exception("Este arquivo YAML não existe: {$this->_arquivoYAML}");
 
 		$conteudoArquivo = file_get_contents($this->_arquivoYAML);
 
@@ -107,10 +107,14 @@ class Gerador
 
 	public function output()
 	{
+		if( ! is_dir($this->_diretorioSaida))
+		{
+			mkdir($this->_diretorioSaida);
+		}
+
 		foreach ($this->_elements as $element)
 		{
 			$element->output($this->_diretorioSaida);
 		}
-		//print_r($this->_elements);
 	}
 }
