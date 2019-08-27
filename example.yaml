@@ -1,0 +1,10 @@
+model:
+  message:
+    id: integer, primary_key, autoincrement
+    assunto: string
+    mensagem: text
+controller:
+  message: index, new, create, show, edit, update, destroy
+  user: all
+view:
+  message: all

@@ -1,0 +1,15 @@
+{
+    "name": "lhkowalski/geradormvc",
+    "description": "Gera controllers, models e views de acordo com um template",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luiz Kowalski",
+            "email": "lhkowalski@gmail.com"
+        }
+    ],
+    "require": {
+        "symfony/yaml": "^4.3"
+    }
+}
