@@ -8,6 +8,7 @@ require ROOT_DIR . '/class/template.php';
 require ROOT_DIR . '/class/controller.php';
 require ROOT_DIR . '/class/model.php';
 require ROOT_DIR . '/class/view.php';
+require ROOT_DIR . '/class/input.php';
 require ROOT_DIR . '/class/gerador.php';
 
 try

@@ -1,9 +1,17 @@
 <?php echo "<?php\n"; ?>
 
-class Controller_Abobora extends Controller
+class Controller_<?php echo ucfirst($name); ?> extends Controller
 {
-	public function index()
+
+<?php foreach($actions as $a): ?>
+	/**
+	 * 
+	 */
+	public function <?php echo $a; ?>()
 	{
-		echo "Rodar!";
+		$template = new Template('views/<?php echo strtolower($name); ?>/<?php echo strtolower($a); ?>.php');
+		return $template;
 	}
+
+<?php endforeach; ?>
 }

@@ -1,32 +1,28 @@
 <?php
 
-class Model
+class Input
 {
-	protected $_name, $_table, $_primaryKey, $_properties;
+	protected $_name, $_properties;
 
-	public function __construct($name, $table, $properties)
+	public function __construct($name, $properties)
 	{
 		$this->_name = $name;
-		$this->_table = $table;
 		$this->_properties = array_keys($properties);
-		$this->_primaryKey = $this->_properties[0];
 	}
 
 	protected function _render()
 	{
-		$template = new Template('model.php');
+		$template = new Template('input.php');
 
 		$template->name = $this->_name;
-		$template->table = $this->_table;
 		$template->properties = $this->_properties;
-		$template->primaryKey = $this->_primaryKey;
 
 		return $template->render();
 	}
 
 	public function output($directory = '.')
 	{
-		$directory = $directory . '/model/';
+		$directory = $directory . '/input/';
 		
 		if( ! is_dir($directory))
 		{

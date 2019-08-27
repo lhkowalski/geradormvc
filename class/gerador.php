@@ -82,8 +82,14 @@ class Gerador
 	{
 		foreach($listaItens as $nome => $properties)
 		{
-			$model = new Model($nome, $properties);
+			$model = new Model($nome, $properties['table'], $properties['fields']);
 			$this->_elements[] = $model;
+
+			// gerar create table
+
+			// gerar input classes com validação
+			$input = new Input($nome, $properties['fields']);
+			$this->_elements[] = $input;
 		}
 	}
 

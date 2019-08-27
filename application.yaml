@@ -1,0 +1,16 @@
+model:
+  message:
+    table: messages
+    fields:
+      id: integer
+      assunto: string
+      mensagem: text
+    validation:
+      id: number, positive
+      assunto: string, not-empty, min-4, max-255
+      mensagem: string, not-empty, min-4
+controller:
+  message: index, new, create, show, edit, update, destroy
+  user: all
+view:
+  message: all
